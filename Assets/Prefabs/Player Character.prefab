@@ -207,9 +207,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1490000543939911180}
   - component: {fileID: 1490000543939911178}
+  - component: {fileID: 1368726626}
   - component: {fileID: 1490000543939911181}
   - component: {fileID: 1490000543939911179}
-  - component: {fileID: 1368726626}
   m_Layer: 0
   m_Name: Player Character
   m_TagString: Player
@@ -248,6 +248,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 1.25}
   m_Size: {x: 1, y: 2.5}
   m_Direction: 0
+--- !u!58 &1368726626
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490000543939911183}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.47, y: 2.29}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!50 &1490000543939911181
 Rigidbody2D:
   serializedVersion: 4
@@ -284,27 +300,12 @@ MonoBehaviour:
   maxJumpTime: 0.5
   jumpSpeed: 8
   groundCheckDistance: 0.01
+  baseAnimationSpeed: 2
   animator: {fileID: 1490000543482677457}
   charRigidbody: {fileID: 1490000543939911181}
   layerMask:
     serializedVersion: 2
     m_Bits: 8
---- !u!58 &1368726626
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490000543939911183}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.47, y: 2.29}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &1490000544002979785
 GameObject:
   m_ObjectHideFlags: 0

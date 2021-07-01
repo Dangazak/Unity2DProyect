@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     const string JUMPING = "Jumping";
     const string GROUNDED = "Grounded";
-    [SerializeField] float maxJumpTime, jumpSpeed, groundCheckDistance;
+    [SerializeField] float maxJumpTime, jumpSpeed, groundCheckDistance, baseAnimationSpeed;
     [SerializeField] Animator animator;
     [SerializeField] Rigidbody2D charRigidbody;
     [SerializeField] LayerMask layerMask;
@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         gameManager = GameManager.Instance;
+        animator.speed = baseAnimationSpeed;
     }
     void Update()
     {
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
             jumpTime = 0;
             grounded = true;
             jumpLocked = false;
-            animator.speed = gameManager.gameSpeed;
+            animator.speed = baseAnimationSpeed;
             animator.SetBool(GROUNDED, true);
             return;
         }
