@@ -19,4 +19,9 @@ public class GameManager : MonoBehaviour
     {
         gameSpeed = 1;
     }
+    public void GameOver()
+    {
+        Debug.Log("Game Over");
+        //ScoreManager.instance.CheckRecord();
+    }
 }

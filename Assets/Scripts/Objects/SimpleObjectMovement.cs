@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class SimpleObjectMovement : MonoBehaviour
 {
+    GameManager gameManager;
+    private void Start()
+    {
+        gameManager = GameManager.Instance;
+    }
     void Update()
     {
         transform.position = new Vector3(transform.position.x - Constants.BASE_SPEED * Time.deltaTime, transform.position.y, transform.position.z);
@@ -13,7 +18,7 @@ public class SimpleObjectMovement : MonoBehaviour
         if (other.gameObject.layer == Constants.PLAYER_LAYER)
         {
             //Game Over
-            Debug.Log("Game Over");
+            gameManager.GameOver();
         }
     }
 }

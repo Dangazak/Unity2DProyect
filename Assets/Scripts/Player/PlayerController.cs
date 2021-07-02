@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody2D charRigidbody;
     [SerializeField] LayerMask layerMask;
     float jumpTime;
-    bool grounded, jumpLocked;
+    bool grounded, jumpLocked, touchInput;
     GameManager gameManager;
     private void Start()
     {
@@ -23,18 +23,28 @@ public class PlayerController : MonoBehaviour
         GroundedCheck();
         if (!jumpLocked && Input.GetKey(KeyCode.Space))
         {
-            animator.speed = 1;
-            animator.SetBool(JUMPING, true);
-            jumpTime += Time.deltaTime;
-            if (jumpTime < maxJumpTime)
-                charRigidbody.velocity = new Vector2(0, jumpSpeed);
+            Jumping();
         }
-        else if (Input.GetKeyUp(KeyCode.Space))
+        else if (!jumpLocked && Input.touchCount > 0)
+        {
+            Jumping();
+            touchInput = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.Space) || (Input.touchCount == 0 && touchInput))
         {
             jumpLocked = true;
+            touchInput = false;
         }
         if (charRigidbody.velocity.y <= 0)
             animator.SetBool(JUMPING, false);
+    }
+    void Jumping()
+    {
+        animator.speed = 1;
+        animator.SetBool(JUMPING, true);
+        jumpTime += Time.deltaTime;
+        if (jumpTime < maxJumpTime)
+            charRigidbody.velocity = new Vector2(0, jumpSpeed);
     }
     void GroundedCheck()
     {
