@@ -19,9 +19,9 @@ public class ScoreManager : MonoBehaviour
         recordText.text = PlayerPrefs.GetInt("Record").ToString();
     }
 
-    public void AddScore(int n)
+    public void AddScore(int points)
     {
-        score += n;
+        score += points;
         scoreText.text = score.ToString();
     }
 
@@ -31,5 +31,11 @@ public class ScoreManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Record", score);
         }
+    }
+
+    public void ResetScore()
+    {
+        score = 0;
+        scoreText.text = score.ToString();
     }
 }
