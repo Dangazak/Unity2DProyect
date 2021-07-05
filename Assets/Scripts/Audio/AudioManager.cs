@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioSource musicAudioSource;
-    [SerializeField] AudioClip gameMusic, gameOverMusic, jumpSound, lootBoxSound, coinSound;
+    [SerializeField] AudioClip mainMenuMusic, gameMusic, gameOverMusic, jumpSound, lootBoxSound, coinSound, clickSound;
     [SerializeField] float minPitch, maxPitch, speedToPitchRatio;
     public static AudioManager instance;
     GameManager gameManager;
@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayGameOverMusic()
     {
+        musicAudioSource.pitch = 1;
         musicAudioSource.Stop();
         musicAudioSource.PlayOneShot(gameOverMusic);
     }
