@@ -607,7 +607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4642531192985248374, guid: b8e8a2b29db7d324db126de59f25f70f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.25
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4642531192985248374, guid: b8e8a2b29db7d324db126de59f25f70f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -859,7 +859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &870207203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -872,8 +872,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9689526b8520654a8c5a03c70e3fbe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 3322488440379039518, guid: 170c76fd517e13d458fb5ae334ae68f2, type: 3}
-  timeBetweenSpawn: 3
+  obstacles:
+  - {fileID: 2335641588141524065, guid: 9dff6b074baca284a97f86a82bfc557d, type: 3}
+  - {fileID: 3322488440379039518, guid: 170c76fd517e13d458fb5ae334ae68f2, type: 3}
+  - {fileID: 1662909842704733989, guid: efee6446cb9fe444da45de7c9af8b83c, type: 3}
+  - {fileID: 4642531192985248371, guid: b8e8a2b29db7d324db126de59f25f70f, type: 3}
+  - {fileID: 3029986467873136423, guid: 26cc9900520af3b41be8c59ff1b8d2bb, type: 3}
+  - {fileID: 8279809870027771669, guid: 77782d5e55971264b9ed3be62048b32e, type: 3}
+  coin: {fileID: 8530496222933798419, guid: 9fe7bfc925013e3429a7d2a4aa6641f7, type: 3}
+  lootBox: {fileID: 5744838585205933934, guid: a16a4808e126ac2498ba0e8533812ee5, type: 3}
+  minTimeBetweenSpawns: 1
+  maxTimeBetweenSpawns: 5
+  breakTimeDuration: 5
+  timeBetweenSpeedUps: 3
+  speedUpAmount: 0.01
+  obstacleUnlockRate: 0.3
+  coinChance: 0
+  lootChance: 0
+  breakChance: 0
 --- !u!4 &870207204
 Transform:
   m_ObjectHideFlags: 0
@@ -1075,7 +1091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1115743074
 Transform:
   m_ObjectHideFlags: 0
@@ -1215,7 +1231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1662909842704733984, guid: efee6446cb9fe444da45de7c9af8b83c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.5
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1662909842704733984, guid: efee6446cb9fe444da45de7c9af8b83c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1742,7 +1758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2335641588141524068, guid: 9dff6b074baca284a97f86a82bfc557d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.5
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2335641588141524068, guid: 9dff6b074baca284a97f86a82bfc557d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1795,7 +1811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8279809870027771664, guid: 77782d5e55971264b9ed3be62048b32e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8279809870027771664, guid: 77782d5e55971264b9ed3be62048b32e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2594,11 +2610,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: cbe70433dc65eda4999b5c6704af0d7b, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2790,16 +2806,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1948498412}
   musicAudioSource: {fileID: 1948498411}
-  mainMenuMusic: {fileID: 0}
-  gameMusic: {fileID: 0}
-  gameOverMusic: {fileID: 0}
-  jumpSound: {fileID: 0}
-  lootBoxSound: {fileID: 0}
-  coinSound: {fileID: 0}
-  clickSound: {fileID: 0}
+  gameOverMusic: {fileID: 8300000, guid: 2cfa074a8071a76498aaf1b2f1b06b50, type: 3}
+  jumpSound: {fileID: 8300000, guid: 0e51b45482f3219419f1282e6626e2b7, type: 3}
+  lootBoxSound: {fileID: 8300000, guid: 53d7f38b2c414b242b933fc3e103d2ea, type: 3}
+  coinSound: {fileID: 8300000, guid: fe575cef8d0276e489577ae104f5c129, type: 3}
+  clickSound: {fileID: 8300000, guid: 9cf8f5aa3f2f9744c9a4aae2f5649d91, type: 3}
   minPitch: 0.8
   maxPitch: 1.2
-  speedToPitchRatio: 0
 --- !u!4 &1948498414
 Transform:
   m_ObjectHideFlags: 0
@@ -3156,6 +3169,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1490000543939911179, guid: 06fe08fa0c96eb84b8efd10f62c9ce53, type: 3}
+      propertyPath: jumpSoundLockedTime
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1490000543939911180, guid: 06fe08fa0c96eb84b8efd10f62c9ce53, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3343,7 +3360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3029986467873136418, guid: 26cc9900520af3b41be8c59ff1b8d2bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.5
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3029986467873136418, guid: 26cc9900520af3b41be8c59ff1b8d2bb, type: 3}
       propertyPath: m_LocalPosition.y

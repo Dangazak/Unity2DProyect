@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         gameSpeed += deltaSpeed;
         gameSpeed = Mathf.Clamp(gameSpeed, minGameSpeed, maxGameSpeed);
         Time.timeScale = gameSpeed;
+        AudioManager.instance.ChangeMusicPitch();
     }
     public void Initialice()
     {

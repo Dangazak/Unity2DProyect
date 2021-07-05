@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4952474776584040588}
   - component: {fileID: 329429183283707933}
+  - component: {fileID: 5669651232680689332}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -82,6 +83,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5669651232680689332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458941897102263682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce7a59dcfc5c4d742abac18ea0096757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3029986467873136423
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3029986467873136423}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.5, y: -3.25, z: 0}
+  m_LocalPosition: {x: 11, y: -3.25, z: 0}
   m_LocalScale: {x: 1, y: 2.5, z: 1}
   m_Children:
   - {fileID: 3338531322062498281}
@@ -191,6 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 500
+  spawnTimeDelay: 0.1
 --- !u!61 &3029986467873136422
 BoxCollider2D:
   m_ObjectHideFlags: 0

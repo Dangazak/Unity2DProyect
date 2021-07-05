@@ -22,7 +22,7 @@ public class ScrollParallax : MonoBehaviour
         if (!stop)
         {
             timePassed += Time.deltaTime;
-            rendererTarget.material.mainTextureOffset = new Vector2(timePassed * parallaxVelocity * gameManager.gameSpeed, 0);
+            rendererTarget.material.mainTextureOffset = new Vector2(timePassed * parallaxVelocity, 0);
         }
         /*if (Input.GetKeyDown(KeyCode.Space))
         {
