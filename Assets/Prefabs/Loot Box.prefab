@@ -45,6 +45,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minPoints: 1
   maxPoints: 25
+--- !u!1 &1326598252125428288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4744225035294294026}
+  - component: {fileID: 5083704634250590300}
+  m_Layer: 0
+  m_Name: CoinFrenzy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4744225035294294026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326598252125428288}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4194481802267397985}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5083704634250590300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326598252125428288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eff564b9578f024ab537a4173aa6aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1623498448584726520
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,6 +119,7 @@ Transform:
   - {fileID: 6818352675926279543}
   - {fileID: 7312969167986301447}
   - {fileID: 204180141808756482}
+  - {fileID: 4744225035294294026}
   m_Father: {fileID: 7724028486966914151}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -225,7 +269,8 @@ MonoBehaviour:
   - {fileID: 1244944450945156711}
   - {fileID: 6270884127044488682}
   - {fileID: 6219947272122213722}
-  chanceForEachReward: 0a000000140000000500000005000000
+  - {fileID: 1326598252125428288}
+  chanceForEachReward: 0a0000001400000005000000050000001e000000
 --- !u!61 &6481542507109518968
 BoxCollider2D:
   m_ObjectHideFlags: 0

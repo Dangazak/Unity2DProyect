@@ -12,7 +12,7 @@ public class Loot : MonoBehaviour
         int chancesChecked = 0;
         for (int i = 0; i < chanceForEachReward.Length; i++)
         {
-            if (randomNumber > chancesChecked + chanceForEachReward[i])
+            if (randomNumber < chancesChecked + chanceForEachReward[i])
             {
                 posibleRewards[i].GetComponent<IRewards>().ActivateReward();
                 return;

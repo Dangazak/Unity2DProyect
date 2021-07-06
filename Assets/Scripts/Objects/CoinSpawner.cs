@@ -49,12 +49,17 @@ public class CoinSpawner : MonoBehaviour
     void SpawnFrenzyCoin()
     {
         Vector3 frenzySpawnPosition = frenzySpawnOriginPosition;
-        frenzySpawnPosition.y += (maxPositionY - minPositionY) * Mathf.Sin(alpha);
+        frenzySpawnPosition.y += ((maxPositionY - minPositionY) * 0.5f) * Mathf.Sin(alpha);
+        Instantiate(coin, frenzySpawnPosition, Quaternion.identity);
+        frenzyCoinsSpawned++;
+        if (frenzyCoinsSpawned >= frenzyCoinsToSpawn)
+            frenzy = false;
     }
     public void StartFrenzy()
     {
+        frenzy = true;
         frenzySpawnOriginPosition = transform.position;
-        frenzySpawnOriginPosition.y = maxPositionY - minPositionY;
+        frenzySpawnOriginPosition.y = ((maxPositionY - minPositionY) * 0.5f) + minPositionY;
         frenzyCoinsSpawned = 0;
         alpha = 0;
         SpawnFrenzyCoin();

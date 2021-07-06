@@ -2277,12 +2277,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coin: {fileID: 8530496222933798419, guid: 9fe7bfc925013e3429a7d2a4aa6641f7, type: 3}
-  minSpawnTime: 2
-  maxSpawnTime: 5
+  minSpawnTime: 3
+  maxSpawnTime: 8
   minPositionY: -1.33
   maxPositionY: 1.75
   frenzySpawnTime: 0.5
-  frenzyAlphaVariation: 0.02
+  frenzyAlphaVariation: 2
   frenzyCoinsToSpawn: 20
   frenzy: 0
 --- !u!4 &972220847
