@@ -19,6 +19,10 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         gameManager = GameManager.Instance;
+        if (PlayerPrefs.HasKey("MusicVolume"))
+            SetMusicVolume(PlayerPrefs.GetFloat("MusicVolume"));
+        if (PlayerPrefs.HasKey("SoundVolume"))
+            SetSoundVolume(PlayerPrefs.GetFloat("SoundVolume"));
     }
     public void PlayGameOverMusic()
     {
@@ -38,6 +42,10 @@ public class AudioManager : MonoBehaviour
     {
         PlayClip(coinSound);
     }
+    public void PlayClickSound()
+    {
+        PlayClip(clickSound);
+    }
     public void PauseMusic()
     {
         musicAudioSource.Pause();
@@ -54,5 +62,13 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.pitch = Random.Range(minPitch, maxPitch);
         audioSource.PlayOneShot(clipToPlay);
+    }
+    public void SetMusicVolume(float volume)
+    {
+        musicAudioSource.volume = volume;
+    }
+    public void SetSoundVolume(float volume)
+    {
+        audioSource.volume = volume;
     }
 }

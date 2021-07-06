@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager instance;
     [SerializeField] int score;
     [SerializeField] Text scoreText, recordText, gameOverScoreText, gameOverRecordText;
-    [SerializeField] GameObject gameOverPanel;
+    [SerializeField] GameObject gameOverPanel, gameUIPanel;
 
     private void Awake()
     {
@@ -29,6 +29,7 @@ public class ScoreManager : MonoBehaviour
 
     public void CheckRecord()
     {
+        gameUIPanel.SetActive(false);
         gameOverPanel.SetActive(true);
         if (score > PlayerPrefs.GetInt("Record"))
         {
