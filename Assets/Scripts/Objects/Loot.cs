@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Loot : MonoBehaviour
 {
-    [SerializeField] IRewards[] posibleRewards;
+    [SerializeField] GameObject[] posibleRewards;
     [SerializeField] int[] chanceForEachReward;
-    void ActivateReward()
+    void ActivateRandomReward()
     {
         int randomNumber = Random.Range(0, AddAllChances());
         int chancesChecked = 0;
@@ -14,7 +14,7 @@ public class Loot : MonoBehaviour
         {
             if (randomNumber > chancesChecked + chanceForEachReward[i])
             {
-                posibleRewards[i].ActivateReward();
+                posibleRewards[i].GetComponent<IRewards>().ActivateReward();
                 return;
             }
             chancesChecked += chanceForEachReward[i];
@@ -28,5 +28,15 @@ public class Loot : MonoBehaviour
             totalChances += chanceForEachReward[i];
         }
         return totalChances;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == Constants.PLAYER_LAYER)
+        {
+            ActivateRandomReward();
+            AudioManager.instance.PlayLootSound();
+            Destroy(gameObject);
+        }
     }
 }

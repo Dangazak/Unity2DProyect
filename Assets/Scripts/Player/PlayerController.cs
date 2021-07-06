@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     {
         gameManager = GameManager.Instance;
         animator.speed = baseAnimationSpeed;
+        gameManager.Initialize();
     }
     void Update()
     {

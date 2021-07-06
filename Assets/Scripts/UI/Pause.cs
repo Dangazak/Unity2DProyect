@@ -16,11 +16,14 @@ public class Pause : MonoBehaviour
         Time.timeScale = 0;
         pausePanel.SetActive(true);
         gameUIPanel.SetActive(false);
+        AudioManager.instance.PauseMusic();
     }
+
     public void UnPauseGame()
     {
         Time.timeScale = gameManager.gameSpeed;
         pausePanel.SetActive(false);
         gameUIPanel.SetActive(true);
+        AudioManager.instance.UnpauseMusic();
     }
 }

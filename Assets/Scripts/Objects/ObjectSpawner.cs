@@ -5,13 +5,13 @@ using UnityEngine;
 public class ObjectSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] obstacles;
-    [SerializeField] GameObject coin, lootBox;
-    [SerializeField] float minTimeBetweenSpawns, maxTimeBetweenSpawns, breakTimeDuration, timeBetweenSpeedUps, speedUpAmount, obstacleUnlockRate;
-    [SerializeField] int coinChance, lootChance, breakChance;
-    float timeToNextSpawn, timeSinceLastSpawn, timeSinceLastSpeedUp, breakTime;
+    [SerializeField] GameObject lootBox;
+    [SerializeField] float minTimeBetweenSpawns, maxTimeBetweenSpawns, timeBetweenSpeedUps, speedUpAmount, obstacleUnlockRate;
+    [SerializeField] int lootChance;
+    float timeToNextSpawn, timeSinceLastSpawn, timeSinceLastSpeedUp;
     GameObject nextObjectToSpawn;
     int activeObstacles;
-    bool isBreakTime;
+    bool lootSpawnCheck;
     GameManager gameManager;
     void Start()
     {
@@ -34,6 +34,11 @@ public class ObjectSpawner : MonoBehaviour
         {
             timeSinceLastSpawn -= timeToNextSpawn;
             SpawnObstacle();
+            lootSpawnCheck = false;
+        }
+        else if (timeSinceLastSpawn * 2 >= timeToNextSpawn && !lootSpawnCheck)
+        {
+            LootSpawn();
         }
     }
     public void SpawnObstacle()
@@ -50,5 +55,19 @@ public class ObjectSpawner : MonoBehaviour
             activeObstacles++;
         if (activeObstacles > obstacles.Length)
             activeObstacles = obstacles.Length;
+    }
+    void LootSpawn()
+    {
+        lootSpawnCheck = true;
+        int randomNumber = Random.Range(0, 100);
+        if (randomNumber < lootChance)
+        {
+            lootChance = 0;
+            Instantiate(lootBox);
+        }
+        else
+        {
+            lootChance++;
+        }
     }
 }

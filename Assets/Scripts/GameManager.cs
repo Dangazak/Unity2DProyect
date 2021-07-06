@@ -18,12 +18,13 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        Initialice();
+        Initialize();
     }
     public void GameOver()
     {
-        Debug.Log("Game Over");
-        //ScoreManager.instance.CheckRecord();
+        AudioManager.instance.PlayGameOverMusic();
+        Time.timeScale = 0;
+        ScoreManager.instance.CheckRecord();
     }
     public void SpeedChange(float deltaSpeed)
     {
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = gameSpeed;
         AudioManager.instance.ChangeMusicPitch();
     }
-    public void Initialice()
+    public void Initialize()
     {
         gameSpeed = minGameSpeed;
         Time.timeScale = gameSpeed;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedUpReward : IRewards
+public class SpeedUpReward : MonoBehaviour, IRewards
 {
     [SerializeField] float speedChangeAmount;
     GameManager gameManager;
