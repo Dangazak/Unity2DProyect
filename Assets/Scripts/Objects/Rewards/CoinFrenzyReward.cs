@@ -7,5 +7,6 @@ public class CoinFrenzyReward : MonoBehaviour, IRewards
     public void ActivateReward()
     {
         CoinSpawner.instance.StartFrenzy();
+        RewardTextManager.instance.ActivateText("Coin frenzy!");
     }
 }

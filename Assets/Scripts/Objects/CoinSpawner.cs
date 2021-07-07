@@ -62,6 +62,6 @@ public class CoinSpawner : MonoBehaviour
         frenzySpawnOriginPosition.y = ((maxPositionY - minPositionY) * 0.5f) + minPositionY;
         frenzyCoinsSpawned = 0;
         alpha = 0;
-        SpawnFrenzyCoin();
+        timeSinceLastSpawn = 0;
     }
 }

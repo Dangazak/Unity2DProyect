@@ -10,5 +10,9 @@ public class SpeedUpReward : MonoBehaviour, IRewards
     {
         gameManager = GameManager.Instance;
         gameManager.SpeedChange(speedChangeAmount);
+        if (speedChangeAmount > 0)
+            RewardTextManager.instance.ActivateText("Speed up!");
+        else if (speedChangeAmount < 0)
+            RewardTextManager.instance.ActivateText("Slow down!");
     }
 }
