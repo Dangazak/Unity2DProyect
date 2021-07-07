@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Controls the random spawning of coins and the coin frenzy reward
 public class CoinSpawner : MonoBehaviour
 {
     public static CoinSpawner instance;
@@ -12,14 +13,14 @@ public class CoinSpawner : MonoBehaviour
     float timeSinceLastSpawn, nextSpawnTime, timeSinceLastFrenzySpawn, alpha;
     int frenzyCoinsSpawned;
     Vector3 frenzySpawnOriginPosition;
-    private void Start()
+    private void Awake()
     {
         instance = this;
         nextSpawnTime = Random.Range(minSpawnTime, maxSpawnTime);
     }
     private void Update()
     {
-        if (!frenzy)
+        if (!frenzy)//if frenzy is not active spawn coin at random intervails
         {
             timeSinceLastSpawn += Time.deltaTime;
             if (timeSinceLastSpawn >= nextSpawnTime)
@@ -29,7 +30,7 @@ public class CoinSpawner : MonoBehaviour
                 SpawnCoin();
             }
         }
-        else
+        else//if frenzy is active spawn coins is sinusoidal pattern
         {
             timeSinceLastFrenzySpawn += Time.deltaTime;
             alpha += frenzyAlphaVariation * Time.deltaTime;

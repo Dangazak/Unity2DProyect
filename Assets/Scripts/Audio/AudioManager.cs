@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioSource musicAudioSource;
     [SerializeField] AudioClip gameOverMusic, jumpSound, lootBoxSound, coinSound, clickSound; //mainMenuMusic, gameMusic, 
-    [SerializeField] float minPitch, maxPitch;//, speedToPitchRatio
+    [SerializeField] float minPitch, maxPitch;
     public static AudioManager instance;
     GameManager gameManager;
 

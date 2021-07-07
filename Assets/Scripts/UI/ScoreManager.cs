@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//UI and score manager
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;

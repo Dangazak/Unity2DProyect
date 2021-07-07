@@ -9,14 +9,14 @@ public class ScrollParallax : MonoBehaviour
     [SerializeField] bool stop;
     float timePassed;
     GameManager gameManager;
-    // Start is called before the first frame update
+
     void Start()
     {
         rendererTarget = GetComponent<Renderer>();
         gameManager = GameManager.Instance;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (!stop)
@@ -24,9 +24,5 @@ public class ScrollParallax : MonoBehaviour
             timePassed += Time.deltaTime;
             rendererTarget.material.mainTextureOffset = new Vector2(timePassed * parallaxVelocity, 0);
         }
-        /*if (Input.GetKeyDown(KeyCode.Space))
-        {
-            stop = !stop;
-        }*/
     }
 }

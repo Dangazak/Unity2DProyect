@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Controls the movement of the main character with the players input
 public class PlayerController : MonoBehaviour
 {
     const string JUMPING = "Jumping";

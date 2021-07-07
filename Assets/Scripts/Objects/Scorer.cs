@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Detects collisions with the obstacles to add their points value to the score
 public class Scorer : MonoBehaviour
 {
     public int baseScorePerObject;

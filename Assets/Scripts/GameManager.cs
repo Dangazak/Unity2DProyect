@@ -37,6 +37,5 @@ public class GameManager : MonoBehaviour
     {
         gameSpeed = minGameSpeed;
         Time.timeScale = gameSpeed;
-        //reset score
     }
 }

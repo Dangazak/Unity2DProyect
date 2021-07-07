@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Text feedback of the "loot boxes" rewards
 public class RewardTextManager : MonoBehaviour
 {
     public static RewardTextManager instance;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//controls the "loot boxes" that activate a random reward when they are picked
 public class Loot : MonoBehaviour
 {
     [SerializeField] GameObject[] posibleRewards;

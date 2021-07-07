@@ -1,3 +1,4 @@
+//Stores frecuently used constants
 public static class Constants
 {
     public const float BASE_SPEED = 5f;

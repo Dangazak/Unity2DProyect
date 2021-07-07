@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Controls the spawning of obstacles, "loot boxes", the speed of the game and its difficulty
 public class ObjectSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] obstacles;

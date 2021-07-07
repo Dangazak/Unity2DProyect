@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Controls the obstacles collision with the player and stores their variables
 public class ObjectControl : MonoBehaviour
 {
     public int scoreValue;

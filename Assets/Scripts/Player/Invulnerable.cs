@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Makes the player invulnerable and displays a blinking effect on the main character
 public class Invulnerable : MonoBehaviour
 {
     [SerializeField] float invulnerabilityTime, flickerTime;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Controls the movement of objects
 public class SimpleObjectMovement : MonoBehaviour
 {
     void Update()
