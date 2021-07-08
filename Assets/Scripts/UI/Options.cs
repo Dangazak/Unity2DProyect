@@ -12,12 +12,24 @@ public class Options : MonoBehaviour
         if (PlayerPrefs.HasKey("MusicVolume"))
         {
             musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume");
-            AudioManager.instance.SetMusicVolume(musicVolumeSlider.value);
+            AudioManager.instance.SetMusicVolume(PlayerPrefs.GetFloat("MusicVolume"));
         }
         if (PlayerPrefs.HasKey("SoundVolume"))
         {
             musicVolumeSlider.value = PlayerPrefs.GetFloat("SoundVolume");
-            AudioManager.instance.SetSoundVolume(soundVolumeSlider.value);
+            AudioManager.instance.SetSoundVolume(PlayerPrefs.GetFloat("MusicVolume"));
+        }
+    }
+    private void OnEnable()
+    {
+        if (PlayerPrefs.HasKey("MusicVolume"))
+        {
+            musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume");
+        }
+        if (PlayerPrefs.HasKey("SoundVolume"))
+        {
+            musicVolumeSlider.value = PlayerPrefs.GetFloat("SoundVolume");
+
         }
     }
 
